@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+      document.getElementById(pageId).classList.remove("hidden");
+    }
+  </script>
+</head>
+<body class="bg-gray-100">
+
+  <nav class="bg-green-700 text-white p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold cursor-pointer" onclick="showPage('landing')">Recipe Finder</h1>
+    <div>
+      <button onclick="showPage('login')" class="bg-white text-green-700 px-4 py-2 rounded hover:bg-gray-200 mr-2">Login</button>
+      <button onclick="showPage('signup')" class="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-500">Signup</button>
+    </div>
+  </nav>
+
+  <section id="landing" class="page text-center py-20 bg-green-100">
+    <h2 class="text-4xl font-bold text-green-700 mb-4">Cook Smarter with Recipe Finder</h2>
+    <p class="text-lg mb-6">Find delicious recipes with the ingredients you already have.</p>
+    <button onclick="showPage('login')" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700">Get Started</button>
+    
+    <div class="mt-16 grid md:grid-cols-3 gap-8 px-8">
+      <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+        <h3 class="text-xl font-bold text-green-700 mb-2">🌿 Smart Search</h3>
+        <p>Enter ingredients you have and get matching recipes instantly.</p>
+      </div>
+      <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+        <h3 class="text-xl font-bold text-green-700 mb-2">🍲 Reduce Waste</h3>
+        <p>Utilize leftovers and avoid food waste by cooking smart.</p>
+      </div>
+      <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+        <h3 class="text-xl font-bold text-green-700 mb-2">👩‍🍳 Easy Recipes</h3>
+        <p>Step-by-step recipes perfect for beginners and pros alike.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="login" class="page hidden flex justify-center items-center py-20">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-6 text-center text-green-700">Login</h2>
+      <input type="email" placeholder="Email"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <input type="password" placeholder="Password"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <button onclick="showPage('landing')"
+        class="w-full bg-green-600 text-white p-3 rounded font-semibold hover:bg-green-700 transition">
+        Login
+      </button>
+      <p class="mt-4 text-sm text-center">
+        New here? <button onclick="showPage('signup')" class="text-green-600 font-semibold">Create an account</button>
+      </p>
+    </div>
+  </section>
+
+  <section id="signup" class="page hidden flex justify-center items-center py-20">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-6 text-center text-green-700">Sign Up</h2>
+      <input type="text" placeholder="Full Name"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <input type="email" placeholder="Email"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <input type="password" placeholder="Password"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <input type="password" placeholder="Confirm Password"
+        class="w-full border p-3 mb-4 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+      <button onclick="showPage('landing')"
+        class="w-full bg-green-600 text-white p-3 rounded font-semibold hover:bg-green-700 transition">
+        Sign Up
+      </button>
+      <p class="mt-4 text-sm text-center">
+        Already have an account? <button onclick="showPage('login')" class="text-green-600 font-semibold">Login here</button>
+      </p>
+    </div>
+  </section>
+
+  <footer class="bg-green-700 text-white text-center py-4 mt-10">
+    <p>&copy; 2025 Recipe Finder. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
